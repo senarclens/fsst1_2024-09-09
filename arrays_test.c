@@ -78,3 +78,14 @@ Test(arrays, maximum, .init = setup) {
 Test(arrays, maximum_negative, .init = setup) {
   cr_assert(eq(int, max(negative, 3), -5));
 }
+
+
+Test(arrays, average, .init = setup) {
+  for (size_t i = 0; i < size; ++i) {
+    lots[i] = i;
+  }
+  cr_assert(eq(dbl, average(one, 1), 3.0));
+  cr_assert(eq(dbl, average(five, 5), 7.0));
+  cr_assert(eq(dbl, average(lots, size), (size - 1) / 2.0));
+  cr_assert(eq(dbl, average(negative, 3), -7.0));
+}

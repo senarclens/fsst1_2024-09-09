@@ -20,6 +20,10 @@ test: $(TESTS)
 	$(info running the following tests: $^)
 	$(foreach TEST,$(TESTS),$(shell ./$(TEST)))
 
+.PHONY: average
+average: $(TESTS)
+	./arrays_test --filter arrays/$@
+
 .PHONY: initialize_range
 initialize_range: $(TESTS)
 	./arrays_test --filter arrays/$@
