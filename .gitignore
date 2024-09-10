@@ -1,2 +1,4 @@
 arrays_test
 circle_test
+
+*.o
